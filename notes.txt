@@ -1,0 +1,160 @@
+                                                               HTML/CSS
+-------------------------------------------------------------------------------------------------------------------------------------------------
+BASICS - 
+Step 1:Request a link -> ISP -> DNS server (will look up the exact IP address of the website you’re trying to access) -> back to comp’s browser
+Step 2: Comp directly requests that address through ISP to the server located at that address via the internet backbone. 
+Step 3: Server -> Comp (via internet backbone and ISP)
+-------------------------------------------------------------------------------------------------------------------------------------------------
+HTML - structure
+CSS - styling 
+JS - adds functionality 
+-------------------------------------------------------------------------------------------------------------------------------------------------
+MDN docs, W3 schools for detailed explanations
+color palette - colorhunt.co
+favicon generator - favicon.cc
+fonts - cssfontstack.com, google fonts (use for font-embedding)
+Lorem ipsum generators 
+vectors - flaticon.com, https://undraw.co/illustrations
+giphy for gifs 
+button - https://css3buttongenerator.com/
+-------------------------------------------------------------------------------------------------------------------------------------------------
+CSS Syntax-
+selector { property:value;}
+Link it in index.html -
+ <head> 
+  <link rel="stylesheet" href="css/styles.css">
+ </head>
+rel - relationship
+href - Hypertext REFerence
+-------------------------------------------------------------------------------------------------------------------------------------------------
+Favicon - save as .ico and link it inside 
+<head>
+<link rel="icon" href="favicon.ico">
+</head>
+-------------------------------------------------------------------------------------------------------------------------------------------------
+CLASS vs ID
+id - can only use once for a particular selector, more specific as a selector
+styles.css :
+#id_name {
+}
+class - no such restriction +any html element can have more than 1 class
+html doc (for > 1 class) ex-
+<img class = "class1 class2" src="#" alt="xyz"/>
+styles.css :
+.class_name {
+}
+-------------------------------------------------------------------------------------------------------------------------------------------------
+also look into pseudo-classes (ex- hover)
+ex - styles.css -
+img: hover {
+background-color: gold;
+}
+-------------------------------------------------------------------------------------------------------------------------------------------------
+CSS Box model layers (top)- 
+           ----------------
+          | Margin (space wrt next element)|
+           ----------------
+          | Border (margin of current element)|
+           ----------------
+          | Padding (space b/w current element and it's own border)|
+           ----------------
+          | Element |
+          
+CSS Box model exercise - 
+body {
+  background-color: #E0ECE8;
+  margin: 0;
+}
+.top-container{
+  background-color: white;
+  height: 200px;
+  width: 200px;
+  border: solid 10px;
+  padding: 20px;
+}
+.mid-container{
+  background-color: red;
+  height: 200px;
+  width: 200px;
+  border: solid 20px;
+  margin-left: 260px;
+}
+.bottom-container {
+  background-color: blue;
+  height: 200px;
+  width: 200px;
+  border: solid 10px;
+  margin-left: 500px;
+}
+-------------------------------------------------------------------------------------------------------------------------------------------------
+div - content division element
+to override the the gap between the start of the page and first div element 
+styles.css :
+body {
+  margin: 0;
+}
+h1 {
+  margin-top: 0;
+}
+note - when value = 0, unit(ex. px) need not be specified.
+-------------------------------------------------------------------------------------------------------------------------------------------------
+CSS - Display Property 
+selector {
+display: property;
+}
+
+Block (takes the whole width on a screen unless specified, height is determined by content)
+Inline (dimensions are determined by content)
+Inline - Block (generally used cz one can add items in the same line and adjust the width/height)
+None
+
+Note - width can be specified for block element but not for inline
+
+Common block elements - 
+<p>
+<h1> through <h6>
+<div>
+<ul>, <ol>, <li>
+<form>
+
+Common inline elements -
+<span>
+<a> (anchor)
+
+Common inline block element - <img>
+-------------------------------------------------------------------------------------------------------------------------------------------------
+CSS Positioning - 
+Static (default)
+Relative (wrt static positions)
+Absolute (position wrt parent, example position of img inside a div)
+Fixed (doesn't get affected even when page is scrolled across, generally used in nav bar design)
+
+
+Relative positioning (need to mention top/right/left/bottom wrt margin after position, else it'll be the same as static)
+img {
+position: relative
+left: 30 px;
+}
+It doesn't affect the positioning of other elements, the current element may just overlap with the existing ones.
+-------------------------------------------------------------------------------------------------------------------------------------------------
+Centering elements - 
+
+METHOD 1 (generally used for inline block etc. wherein width is not set)-
+inside the styling of parent element add 
+parent-selector {
+text-align: center;}
+
+METHOD 2 using margin -
+margin: 0 auto 0 auto;
+OR 
+margin: auto;
+-------------------------------------------------------------------------------------------------------------------------------------------------
+Font size -
+dynamic - 
+16 px = 100% = 1em
+( em - in terms of size of M)
+however dynamic sizing may get affected when you zoom in/out 
+use rem instead (relative to the root)
+-------------------------------------------------------------------------------------------------------------------------------------------------
+Image - float property can be used to align it with text 
+Get rid of the underline on anchor tag by changing the text decoration
